@@ -6,11 +6,11 @@ plugins {
 }
 
 android {
-    namespace = "com.app.template_compose_mvvm"
+    namespace = "com.app.sound_wise"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.app.template_compose_mvvm"
+        applicationId = "com.app.sound_wise"
         minSdk = 24
         targetSdk = 35
         versionCode = 1
