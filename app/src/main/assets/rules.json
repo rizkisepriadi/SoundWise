@@ -1,0 +1,200 @@
+[
+  {
+    "id": 1,
+    "premises": [
+      { "variable": "Lingkungan", "value": "Ok" },
+      { "variable": "Peralatan", "value": "Bagus" },
+      { "variable": "Kalibrasi", "value": "Ok" },
+      { "variable": "Pemeliharaan", "value": "Ok" }
+    ],
+    "result": { "variable": "Rekomendasi", "value": "Layak digunakan" },
+    "cf": 1.0
+  },
+  {
+    "id": 2,
+    "premises": [
+      { "variable": "Lingkungan", "value": "Ok" },
+      { "variable": "Peralatan", "value": "Rendah" }
+    ],
+    "result": { "variable": "Rekomendasi", "value": "Tidak layak digunakan" },
+    "cf": 0.8
+  },
+  {
+    "id": 3,
+    "premises": [
+      { "variable": "Lingkungan", "value": "Ok" },
+      { "variable": "Peralatan", "value": "Sedang" },
+      { "variable": "Kalibrasi", "value": "Ok" },
+      { "variable": "Pemeliharaan", "value": "Ok" }
+    ],
+    "result": { "variable": "Rekomendasi", "value": "Layak digunakan" },
+    "cf": 0.8
+  },
+  {
+    "id": 4,
+    "premises": [
+      { "variable": "Lingkungan", "value": "Ok" },
+      { "variable": "Peralatan", "value": "Sedang" }
+    ],
+    "result": { "variable": "Rekomendasi", "value": "Tidak layak digunakan" },
+    "cf": 0.8
+  },
+  {
+    "id": 5,
+    "premises": [
+      { "variable": "Lingkungan", "value": "Not ok" }
+    ],
+    "result": { "variable": "Rekomendasi", "value": "Tidak layak digunakan" },
+    "cf": 1.0
+  },
+  {
+    "id": 6,
+    "premises": [
+      { "variable": "Ruangan", "value": "Tidak Bergema" },
+      { "variable": "Suara", "value": "Jernih" }
+    ],
+    "result": { "variable": "Lingkungan", "value": "Ok" },
+    "cf": 0.9
+  },
+  {
+    "id": 7,
+    "premises": [
+      { "variable": "Ruangan", "value": "Tidak Bergema" },
+      { "variable": "Suara", "value": "Tidak Jernih" }
+    ],
+    "result": { "variable": "Lingkungan", "value": "Not Ok" },
+    "cf": 0.8
+  },
+  {
+    "id": 8,
+    "premises": [
+      { "variable": "Ruangan", "value": "Bergema" }
+    ],
+    "result": { "variable": "Lingkungan", "value": "Not Ok" },
+    "cf": 1.0
+  },
+  {
+    "id": 9,
+    "premises": [
+      { "variable": "Microphone", "value": "Baik" },
+      { "variable": "Speaker", "value": "Baik" },
+      { "variable": "Arus Listrik", "value": "Stabil" },
+      { "variable": "Amplifier", "value": "Baik" }
+    ],
+    "result": { "variable": "Peralatan", "value": "Bagus" },
+    "cf": 1.0
+  },
+  {
+    "id": 10,
+    "premises": [
+      { "variable": "Microphone", "value": "Baik" },
+      { "variable": "Speaker", "value": "Baik" },
+      { "variable": "Arus Listrik", "value": "Stabil" },
+      { "variable": "Amplifier", "value": "Tidak Baik" }
+    ],
+    "result": { "variable": "Peralatan", "value": "Sedang" },
+    "cf": 0.8
+  },
+  {
+    "id": 11,
+    "premises": [
+      { "variable": "Microphone", "value": "Baik" },
+      { "variable": "Speaker", "value": "Baik" },
+      { "variable": "Arus Listrik", "value": "Tidak Stabil" },
+      { "variable": "Amplifier", "value": "Baik" }
+    ],
+    "result": { "variable": "Peralatan", "value": "Sedang" },
+    "cf": 0.8
+  },
+  {
+    "id": 12,
+    "premises": [
+      { "variable": "Microphone", "value": "Baik" },
+      { "variable": "Speaker", "value": "Baik" },
+      { "variable": "Arus Listrik", "value": "Tidak Stabil" },
+      { "variable": "Amplifier", "value": "Tidak Baik" }
+    ],
+    "result": { "variable": "Peralatan", "value": "Rendah" },
+    "cf": 0.9
+  },
+  {
+    "id": 13,
+    "premises": [
+      { "variable": "Microphone", "value": "Baik" },
+      { "variable": "Speaker", "value": "Tidak Baik" }
+    ],
+    "result": { "variable": "Peralatan", "value": "Rendah" },
+    "cf": 0.9
+  },
+  {
+    "id": 14,
+    "premises": [
+      { "variable": "Microphone", "value": "Tidak Baik" },
+      { "variable": "Speaker", "value": "Baik" },
+      { "variable": "Arus Listrik", "value": "Stabil" },
+      { "variable": "Amplifier", "value": "Baik" }
+    ],
+    "result": { "variable": "Peralatan", "value": "Sedang" },
+    "cf": 0.6
+  },
+  {
+    "id": 15,
+    "premises": [
+      { "variable": "Microphone", "value": "Tidak Baik" }
+    ],
+    "result": { "variable": "Peralatan", "value": "Rendah" },
+    "cf": 1.0
+  },
+  {
+    "id": 16,
+    "premises": [
+      { "variable": "Gain", "value": "Optimal" },
+      { "variable": "Feedback", "value": "Tidak Terjadi" },
+      { "variable": "Equalizer", "value": "Baik" }
+    ],
+    "result": { "variable": "Kalibrasi", "value": "Ok" },
+    "cf": 0.9
+  },
+  {
+    "id": 17,
+    "premises": [
+      { "variable": "Equalizer", "value": "Buruk" }
+    ],
+    "result": { "variable": "Kalibrasi", "value": "Not Ok" },
+    "cf": 0.8
+  },
+  {
+    "id": 18,
+    "premises": [
+      { "variable": "Feedback", "value": "Terjadi" }
+    ],
+    "result": { "variable": "Kalibrasi", "value": "Not Ok" },
+    "cf": 0.9
+  },
+  {
+    "id": 19,
+    "premises": [
+      { "variable": "Pengecekan Kabel", "value": "Teratur" },
+      { "variable": "Overheat", "value": "Tidak" },
+      { "variable": "Perawatan Sound System", "value": "Terawat" }
+    ],
+    "result": { "variable": "Pemeliharaan", "value": "Ok" },
+    "cf": 0.9
+  },
+  {
+    "id": 20,
+    "premises": [
+      { "variable": "Overheat", "value": "Ya" }
+    ],
+    "result": { "variable": "Pemeliharaan", "value": "Not Ok" },
+    "cf": 0.9
+  },
+  {
+    "id": 21,
+    "premises": [
+      { "variable": "Perawatan Sound System", "value": "Tidak Terawat" }
+    ],
+    "result": { "variable": "Pemeliharaan", "value": "Not Ok" },
+    "cf": 0.9
+  }
+]
