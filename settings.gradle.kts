@@ -19,6 +19,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "template-compose-mvvm"
+rootProject.name = "soundwise"
 include(":app")
  
