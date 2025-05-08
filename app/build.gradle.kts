@@ -61,6 +61,9 @@ dependencies {
     implementation(libs.androidx.lifecycle.viewmodel.compose)
     implementation(libs.androidx.runtime.livedata)
 
+    // Lottie
+    implementation(libs.lottie.compose)
+
     // Compose Testing
     androidTestImplementation(libs.androidx.ui.test.junit4)
 

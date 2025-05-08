@@ -15,6 +15,9 @@ activityCompose = "1.10.1"
 androidActivityKtx = "1.8.0"
 androidConstraintLayoutCompose = "1.1.0"
 
+# Lottie
+lottie = "6.6.0"
+
 # Dependency Injection
 koinAndroidxCompose = "3.5.3"
 
@@ -87,6 +90,9 @@ converter-gson = { module = "com.squareup.retrofit2:converter-gson", version.ref
 
 # Image Loader
 coil-compose = { module = "io.coil-kt:coil-compose", version.ref = "coilCompose" }
+
+# Lottie
+lottie-compose = { group = "com.airbnb.android", name = "lottie-compose", version.ref = "lottie" }
 
 # Security
 encrypted-preferences = { module = "com.pddstudio:encrypted-preferences", version.ref = "encryptedPreferences" }
