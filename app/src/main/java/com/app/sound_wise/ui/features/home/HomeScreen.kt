@@ -15,15 +15,14 @@ import org.koin.androidx.compose.koinViewModel
 fun HomeScreen(viewModel: HomeViewModel = koinViewModel()) {
     val result by viewModel.recommendation.observeAsState()
 
-    // Daftar pertanyaan input, hardcoded atau bisa dari remote di kemudian hari
     val questions = remember {
         listOf(
             Fact("Ruangan", "Tidak Bergema"),
             Fact("Suara", "Jernih"),
-            Fact("Microphone", "Baik"),
-            Fact("Speaker", "Baik"),
-            Fact("Arus Listrik", "Stabil"),
-            Fact("Amplifier", "Baik"),
+            Fact("Microphone", "Tidak Baik"),
+            Fact("Speaker", "Tidak Baik"),
+            Fact("Arus Listrik", "Tidak Stabil"),
+            Fact("Amplifier", "Tidak Baik"),
             Fact("Gain", "Optimal"),
             Fact("Feedback", "Tidak Terjadi"),
             Fact("Equalizer", "Baik"),

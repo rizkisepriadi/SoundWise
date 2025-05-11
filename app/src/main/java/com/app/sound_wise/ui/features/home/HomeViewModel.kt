@@ -13,14 +13,22 @@ class HomeViewModel(ruleRepository: RuleRepository) : BaseViewModel() {
 
     private val rules: List<Rule> = ruleRepository.loadRules()
 
-    private val _recommendation = MutableLiveData<Pair<String?, Double>>()
-    val recommendation: LiveData<Pair<String?, Double>> = _recommendation
+    private val _recommendation = MutableLiveData<Pair<String?, Double>?>()
+    val recommendation: LiveData<Pair<String?, Double>?> = _recommendation
 
     private var userInputs: MutableMap<Fact, Double> = mutableMapOf()
 
     fun inferFromUserInput(inputs: List<UserInputState>) {
         userInputs = inputs.associate { it.fact to it.cf }.toMutableMap()
+        println("User input:")
+        userInputs.forEach { println("${it.key} -> ${it.value}") }
+
+        println("Running inference...")
         val engine = InferenceEngine(rules, userInputs)
-        _recommendation.value = engine.infer("Rekomendasi")
+        val result = engine.infer("Rekomendasi")
+        println("Inference result: $result")
+
+        _recommendation.value = result
     }
+
 }
