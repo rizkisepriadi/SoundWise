@@ -13,6 +13,7 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
@@ -31,7 +32,7 @@ fun SplashScreen(navController: NavHostController) {
 
     LaunchedEffect(isSplashShow) {
         if (!isSplashShow) {
-            navController.navigate("home") {
+            navController.navigate("question/0") {
                 popUpTo("splash") { inclusive = true }
             }
         }
@@ -42,7 +43,7 @@ fun SplashScreen(navController: NavHostController) {
     Box(
         modifier = Modifier
             .fillMaxSize()
-            .background(MaterialTheme.colorScheme.primary),
+            .background(color = Color(0xFF39608F)),
         contentAlignment = Alignment.Center
     ) {
         Box(
