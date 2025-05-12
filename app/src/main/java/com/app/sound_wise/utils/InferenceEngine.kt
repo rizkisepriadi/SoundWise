@@ -6,31 +6,56 @@ import com.app.sound_wise.data.models.Rule
 class InferenceEngine(private val rules: List<Rule>, private val userInputs: Map<Fact, Double>) {
     private val inferredFacts: MutableMap<Fact, Double> = mutableMapOf()
 
-    fun infer(target: String): Pair<String, Double>? {
-        return backwardChain(target)
+    fun infer(goalVariable: String): Pair<String, Double>? {
+        val possibleGoals = rules.map { it.result }
+            .filter { it.variable == goalVariable }
+            .distinct()
+
+        val results = possibleGoals.mapNotNull { fact ->
+            val cf = backwardChain(fact)
+            if (cf != null) fact.value to cf else null
+        }
+
+        return results.maxByOrNull { it.second }
     }
 
-    private fun backwardChain(goal: String): Pair<String, Double>? {
-        val applicableRules = rules.filter { it.result.variable == goal }
+    private fun backwardChain(goal: Fact): Double? {
+        userInputs[goal]?.let {
+            println("User input for ${goal.variable}: ${goal.value} -> ${it}")
+            return it
+        }
 
-        val results = mutableListOf<Pair<String, Double>>()
+        inferredFacts[goal]?.let {
+            println("Inferred fact for ${goal.variable}: ${goal.value} -> ${it}")
+            return it
+        }
+
+        val applicableRules = rules.filter { it.result == goal }
+        println("Applicable rules for goal ${goal.variable}: $applicableRules")
+
+        val cfResults = mutableListOf<Double>()
 
         for (rule in applicableRules) {
-            var allPremisesMatched = true
             val premiseCFs = mutableListOf<Double>()
+            var allPremisesMatched = true
 
             for (premise in rule.premises) {
-                // Jika sudah ada input langsung dari user
+                println("Checking premise: ${premise.variable} = ${premise.value}")
+
                 val userCF = userInputs[premise]
+                println("User input for premise ${premise.variable}: ${userCF}")
+
                 if (userCF != null) {
-                    premiseCFs.add(userCF)
-                    continue
+                    if (premise.value == goal.value) {
+                        premiseCFs.add(userCF)
+                        continue
+                    }
                 }
 
-                // Lakukan inferensi ke belakang
-                val subConclusion = backwardChain(premise.variable)
-                if (subConclusion != null && subConclusion.first == premise.value) {
-                    premiseCFs.add(subConclusion.second)
+                val cf = backwardChain(premise)
+                println("Sub-conclusion for premise ${premise.variable}: ${cf}")
+                if (cf != null) {
+                    premiseCFs.add(cf)
                 } else {
                     allPremisesMatched = false
                     break
@@ -40,14 +65,12 @@ class InferenceEngine(private val rules: List<Rule>, private val userInputs: Map
             if (allPremisesMatched) {
                 val cfEvidence = premiseCFs.minOrNull() ?: 1.0
                 val finalCF = cfEvidence * rule.cf
-                val fact = rule.result
-                inferredFacts[fact] = finalCF
-                results.add(Pair(fact.value, finalCF))
+                cfResults.add(finalCF)
+                inferredFacts[goal] = finalCF
+                println("Inferred fact: ${goal.variable} = ${goal.value}, CF = $finalCF")
             }
         }
 
-        return results.maxByOrNull { it.second }
+        return cfResults.maxOrNull()
     }
-
-    fun getAllInferred(): Map<Fact, Double> = inferredFacts
 }
