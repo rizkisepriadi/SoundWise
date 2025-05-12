@@ -1,4 +1,4 @@
-package com.app.sound_wise.ui.question
+package com.app.sound_wise.ui.features.question
 
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image

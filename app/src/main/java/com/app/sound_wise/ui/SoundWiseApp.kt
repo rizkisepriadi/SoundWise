@@ -13,8 +13,8 @@ import com.app.sound_wise.ui.features.loading.LoadingScreen
 import com.app.sound_wise.ui.features.result.ResultScreen
 import com.app.sound_wise.ui.features.splash.SplashScreen
 import com.app.sound_wise.ui.navigation.Screen
-import com.app.sound_wise.ui.question.QuestionsScreen
-import com.app.sound_wise.ui.question.QuestionsViewModel
+import com.app.sound_wise.ui.features.question.QuestionsScreen
+import com.app.sound_wise.ui.features.question.QuestionsViewModel
 import org.koin.androidx.compose.koinViewModel
 
 

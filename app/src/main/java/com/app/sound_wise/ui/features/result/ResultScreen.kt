@@ -27,7 +27,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.app.sound_wise.ui.features.common.CustomButton
-import com.app.sound_wise.ui.question.QuestionsViewModel
+import com.app.sound_wise.ui.features.question.QuestionsViewModel
 
 
 @Composable
