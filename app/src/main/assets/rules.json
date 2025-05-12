@@ -42,7 +42,7 @@
   {
     "id": 5,
     "premises": [
-      { "variable": "Lingkungan", "value": "Not ok" }
+      { "variable": "Lingkungan", "value": "Not Ok" }
     ],
     "result": { "variable": "Rekomendasi", "value": "Tidak layak digunakan" },
     "cf": 1.0
